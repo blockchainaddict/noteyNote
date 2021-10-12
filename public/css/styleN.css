@@ -105,8 +105,8 @@ body {
 
 #btn1 {
     color: rgb(0, 0, 0);
-    background: rgb(179, 194, 147);
-    width: 85px;
+    background: rgb(211, 224, 182);
+    width: 100px;
     border: 1px solid black;
     border-radius: 10px;
     margin-top: 20px;
@@ -168,7 +168,7 @@ body {
     justify-content: center;
     text-align: center;
     border: 1px solid black;
-    border-radius: 20px;
+    border-radius: 10px;
     padding-top: 10px;
 }
 
@@ -193,7 +193,7 @@ body {
     margin: 10px;
     max-width: 250px;
     max-height: 80px;
-    border-radius: 15px;
+    border-radius: 10px;
     justify-content: center;
     align-items: center;
     color: #fff;
@@ -276,7 +276,6 @@ body {
     left: 9vw;
     bottom: 4px;
     border-radius: 5px;
-    background-color: rgb(238, 160, 160);
     padding: 3px;
 }
 
