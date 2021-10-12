@@ -15,7 +15,7 @@ const mainController = {
         const newNote = {
             noteNumber: notesFile.length + 1,
             content: req.body.textarea1,
-            bckgColor: "rgb(179, 194, 147)"
+            bckgColor: req.body.noteColor ? req.body.noteColor : "rgb(179, 194, 147)"
         }
 
         const errors = validationResult(req);
@@ -49,7 +49,7 @@ const mainController = {
         noteToEdit = {
             noteNumber: noteToEdit.noteNumber,
             content: req.body.textarea1,
-            bckgColor: noteToEdit.bckgColor
+            bckgColor: req.body.noteColor ? req.body.noteColor : noteToEdit.bckgColor
         }
 
         let updatedNote = notesFile;

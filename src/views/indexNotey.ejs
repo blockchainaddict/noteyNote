@@ -15,9 +15,7 @@
             <div class="columns"> <div class="note_button_wrapper">
                 <h3 contenteditable="true"> Note <%=notesFile[i].noteNumber %></h3>
                 <button id = "btnb<%= notesFile[i].noteNumber %>"> <a href="/edit/<%=notesFile[i].noteNumber%>" >Edit Note</a> </button>
-                <button class="color c1" id="colorBt1<%= notesFile[i].noteNumber %>"></button> 
-                <button class="color c2" id="colorBt2<%= notesFile[i].noteNumber %>"></button>
-                <button class="color c3" id="colorBt3<%= notesFile[i].noteNumber %>"></button> 
+                
             </div>
             <div style= "background-color:<%= notesFile[i].bckgColor %>" class="note_itself" id="note<%= notesFile[0].noteNumber %>" contenteditable="false">
                 <h4> <%= notesFile[i].content %></h4>
@@ -29,15 +27,7 @@
         </div>
     </div>
 
-    <!-- Footer -->
-    <div class="footer">
-        <div class="footer_container">
-            <h3>Contact me</h3>
-            <a href="" class="footer_item">Email</a>
-            <a href="">GitHub</a>
-        </div>
-        <h4>Thanks for popping by!</h4>
-    </div>
+    <%- include("partials/footer") %>
 
     <script src="appN2.js"></script>
 

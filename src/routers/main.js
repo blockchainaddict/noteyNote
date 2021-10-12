@@ -4,7 +4,7 @@ const router = express.Router();
 const { body, check } = require('express-validator');
 
 const validateRegister = [
-    check('textarea1').notEmpty().withMessage("The note can't be empty")
+    check('textarea1').notEmpty().withMessage("Oops, looks like your note is empty")
 ];
 
 router.get('/', mainController.index);

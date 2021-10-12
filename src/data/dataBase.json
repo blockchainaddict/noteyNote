@@ -1,7 +1,22 @@
 [
  {
   "noteNumber": 1,
-  "content": "The first note is here.",
+  "content": "The first note is here. Now yes.",
+  "bckgColor": "rgb(194, 147, 161)"
+ },
+ {
+  "noteNumber": 2,
+  "content": "aaaa",
+  "bckgColor": "rgb(147, 160, 194)"
+ },
+ {
+  "noteNumber": 3,
+  "content": "supersuper",
+  "bckgColor": "rgb(147, 194, 186)"
+ },
+ {
+  "noteNumber": 4,
+  "content": "asdasdasd",
   "bckgColor": "rgb(179, 194, 147)"
  }
 ]

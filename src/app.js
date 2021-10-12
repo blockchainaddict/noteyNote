@@ -2,6 +2,7 @@ const express = require('express'); //Require express
 const app = express();
 const path = require('path');
 const methodOverride = require('method-override');
+const session = require('express-session');//import session to create user session
 const port = process.env.PORT || 3000; //Set up port for heroku
 
 
@@ -15,6 +16,9 @@ app.use(express.json());
 
 //To be able to put and delete
 app.use(methodOverride('_method'));
+
+//middleware for session data
+app.use(session({secret: "mensaje secreto"}));
 
 // We set Ejs variavles and refer to /views folder for the module to find it
 app.set("view engine", "ejs");

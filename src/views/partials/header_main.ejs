@@ -1,9 +1,12 @@
+<!-- Header -->
 <header class="header">
     <img src="/img/notepad.gif" alt="img1">
     <h1>MyNote</h1>
     <h4>Taking notes is useful and relaxing. <br> Save paper by using this app!</h4>
 </header>
 
+
+<!-- Main -->
 <main class="core">
     <h2 id="verde">Add A New Note</h2>
     <% if(locals.errors){ %> 
@@ -11,6 +14,27 @@
         <% } %>
     <form action="/" method="POST" class="ta_wrapper">
         <textarea type="text" name="textarea1" id="text2" cols="30" rows="10" placeholder="Enter your note"></textarea>
+        <br>
+        <h3>Choose a color</h3>
+        <div class="color_selection">
+            
+            <div class="color c1 over">
+                <input type="radio" name="noteColor" id="autoColor" value="rgb(179, 194, 147)">
+
+            </div>
+            <div class="color c2 over">
+                <input type="radio" name="noteColor" id="autoColor" value="rgb(147, 160, 194)">
+
+            </div>
+            <div class="color c3 over">
+                <input type="radio" name="noteColor" id="autoColor" value="rgb(194, 147, 161)">
+
+            </div>
+            <div class="color c4 over">
+                <input type="radio" name="noteColor" id="autoColor" value="rgb(147, 194, 186)">
+            </div>
+        </div>
+        
         <button type="submit" id="btn1" >Save Note</button>
     </form>
     <br>

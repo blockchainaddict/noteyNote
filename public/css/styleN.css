@@ -225,28 +225,42 @@ body {
     text-overflow:none;
 }
 
+.color_selection{
+    display: flex;
+}
+
+.over{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3px;
+}
+
  /* .color {
     display: none;
 } */
 
-.color.c1, .color.c2, .color.c3{
+.color.c1, .color.c2, .color.c3, .color.c4{
     border-radius: 100%;
     border: hidden;
-    width: 15px;
-    height: 15px;
+    width: 25px;
+    height: 25px;
 }
 
-.c1 {
-    background-color: rgb(147, 160, 194);
+.c1{
+    background-color: rgb(179, 194, 147);
 }
 .c2 {
-    background-color: rgb(194, 147, 161);
+    background-color: rgb(147, 160, 194);
 }
 .c3 {
+    background-color: rgb(194, 147, 161);
+}
+.c4 {
     background-color: rgb(147, 194, 186);
 }
 
-.c1:hover, .c2:hover, .c3:hover {
+.c1:hover, .c2:hover, .c3:hover, .c4:hover, .over input{
     transform: scale(1.2);
     cursor: pointer;
 }

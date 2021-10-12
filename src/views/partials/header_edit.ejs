@@ -8,8 +8,29 @@
     <!-- <input id = "text1" placeholder="Enter your note"> -->
     <form action="/edit/<%= note.noteNumber %>?_method=PUT" method="POST" class="ta_wrapper">
         <textarea type="text" name="textarea1" id="text2" cols="30" rows="10" ><%= note.content %></textarea>
+        <br>
+        <h3>Choose a color</h3>
+        <div class="color_selection">
+            
+            <div class="color c1 over">
+                <input type="radio" name="noteColor" id="autoColor" value="rgb(179, 194, 147)">
+
+            </div>
+            <div class="color c2 over">
+                <input type="radio" name="noteColor" id="autoColor" value="rgb(147, 160, 194)">
+
+            </div>
+            <div class="color c3 over">
+                <input type="radio" name="noteColor" id="autoColor" value="rgb(194, 147, 161)">
+
+            </div>
+            <div class="color c4 over">
+                <input type="radio" name="noteColor" id="autoColor" value="rgb(147, 194, 186)">
+            </div>
+        </div>
         <button type="submit" id="btn1" >Save Note</button>
+
     </form>
     <br>
-    <!-- <button onclick="addNote()" id = "btn1">Save Note</button> -->
 </main>
+
