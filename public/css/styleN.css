@@ -271,14 +271,13 @@ body {
 }
 
 .delete_button{
-    border: 1px solid black;
     font-size: 0.7em;
     position: relative;
     left: 9vw;
     bottom: 4px;
     border-radius: 5px;
-    background-color: rgb(232, 67, 67);
-    padding: 1px;
+    background-color: rgb(238, 160, 160);
+    padding: 3px;
 }
 
 .footer{

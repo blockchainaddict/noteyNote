@@ -1,12 +1,7 @@
 [
  {
   "noteNumber": 1,
-  "content": "asdajsda",
-  "bckgColor": "rgb(179, 194, 147)"
- },
- {
-  "noteNumber": 3,
-  "content": "sdfsdfsdfsdf",
-  "bckgColor": "rgb(179, 194, 147)"
+  "content": "The first note.",
+  "bckgColor": "rgb(147, 160, 194)"
  }
 ]
