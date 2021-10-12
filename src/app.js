@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 
 //middleware for session data
-app.use(session({secret: "mensaje secreto"}));
+app.use(session({secret: "mensajesecreto"}));
 
 // We set Ejs variavles and refer to /views folder for the module to find it
 app.set("view engine", "ejs");

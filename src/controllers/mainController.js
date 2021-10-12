@@ -26,10 +26,18 @@ const mainController = {
             res.redirect('/');
         }
         else{
-            console.log('SHOULD DISPLAY ERROR', errors.mapped());
             res.render('indexNotey', {notesFile:notesFile, errors:errors.mapped() /*, old:req.body*/});
         }
         
+    },
+    prueba: (req,res)=>{
+        // if(req.session.numeroV == undefined){
+        //     req.session.numeroV = 0;
+        // }
+        
+        // req.session.numeroV++;
+        
+        res.send("HELLO");
     },
     edit: (req,res)=>{
         const id = req.params.id;

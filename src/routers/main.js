@@ -8,6 +8,9 @@ const validateRegister = [
 ];
 
 router.get('/', mainController.index);
+
+router.get('/prueba', mainController.prueba);
+
 router.post('/', validateRegister, mainController.newNote);
 
 router.get('/edit/:id', mainController.edit);
