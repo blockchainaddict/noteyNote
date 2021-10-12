@@ -57,6 +57,17 @@ const mainController = {
 
         fs.writeFileSync(notesLocation, JSON.stringify(updatedNote, null, " "));
         res.redirect('/');
+    },
+
+    delete: (req,res)=>{
+        let id = req.params.id;
+        let notesAfterDelete = notesFile.filter(note=>{ return note.noteNumber != id});
+
+        console.log("deleted note", id);
+        console.log(notesAfterDelete);
+
+        fs.writeFileSync(notesLocation, JSON.stringify(notesAfterDelete, null, " "));
+        res.redirect('/');
     }
 
     

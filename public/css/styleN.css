@@ -5,6 +5,11 @@
     font-family: Raleway Light;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
 /*
 :root {
     --a: rgb(179, 194, 147);
@@ -263,6 +268,17 @@ body {
 .c1:hover, .c2:hover, .c3:hover, .c4:hover, .over input{
     transform: scale(1.2);
     cursor: pointer;
+}
+
+.delete_button{
+    border: 1px solid black;
+    font-size: 0.7em;
+    position: relative;
+    left: 9vw;
+    bottom: 4px;
+    border-radius: 5px;
+    background-color: rgb(232, 67, 67);
+    padding: 1px;
 }
 
 .footer{

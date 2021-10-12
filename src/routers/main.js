@@ -13,4 +13,6 @@ router.post('/', validateRegister, mainController.newNote);
 router.get('/edit/:id', mainController.edit);
 router.put('/edit/:id', mainController.editSave);
 
+router.get('/delete/:id', mainController.delete);
+
 module.exports = router;
