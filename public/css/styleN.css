@@ -225,12 +225,11 @@ body {
     text-overflow:none;
 }
 
-.color {
+ /* .color {
     display: none;
-}
+} */
 
-.color.c1.visible, .color.c2.visible, .color.c3.visible{
-    display: initial;
+.color.c1, .color.c2, .color.c3{
     border-radius: 100%;
     border: hidden;
     width: 15px;

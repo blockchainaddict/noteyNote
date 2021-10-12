@@ -7,7 +7,7 @@
     <h2 id="verde">Edit Note</h2>
     <!-- <input id = "text1" placeholder="Enter your note"> -->
     <form action="/edit/<%= note.noteNumber %>?_method=PUT" method="POST" class="ta_wrapper">
-        <input type="text" name="textarea1" id="text2" cols="30" rows="10"  value="<%= note.content %>">
+        <textarea type="text" name="textarea1" id="text2" cols="30" rows="10" ><%= note.content %></textarea>
         <button type="submit" id="btn1" >Save Note</button>
     </form>
     <br>

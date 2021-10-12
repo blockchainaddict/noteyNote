@@ -1,8 +1,8 @@
 //create the controller object
 const path = require('path');
 const fs = require('fs');
-const { propfind } = require('../routers/main');
-const { fileLoader } = require('ejs');
+const { validationResult } = require('express-validator');
+
 
 const notesLocation = path.join(__dirname, '../data/dataBase.json');
 const notesFile = JSON.parse(fs.readFileSync(notesLocation, 'utf-8'));
@@ -18,10 +18,18 @@ const mainController = {
             bckgColor: "rgb(179, 194, 147)"
         }
 
-        notesFile.push(newNote);
+        const errors = validationResult(req);
+        if(errors.isEmpty()){
+            notesFile.push(newNote);
 
-        fs.writeFileSync(notesLocation, JSON.stringify(notesFile, null, " "));
-        res.redirect('/');
+            fs.writeFileSync(notesLocation, JSON.stringify(notesFile, null, " "));
+            res.redirect('/');
+        }
+        else{
+            console.log('SHOULD DISPLAY ERROR', errors.mapped());
+            res.render('indexNotey', {notesFile:notesFile, errors:errors.mapped() /*, old:req.body*/});
+        }
+        
     },
     edit: (req,res)=>{
         const id = req.params.id;

@@ -4,6 +4,13 @@ countOfNotes = 0
 let storedInput = localStorage.getItem('noteList');
 var info = document.querySelector('#saved_notes');
 
+//NEW STUFF
+const path = require('path');
+const fs = require('fs');
+
+const notesLocation = path.join(__dirname, '../data/dataBase.json');
+const notesFile = JSON.parse(fs.readFileSync(notesLocation, 'utf-8'));
+
 let colorList =  { 
     a: "rgb(179, 194, 147)",
     b: "rgb(147, 160, 194)",
@@ -89,43 +96,37 @@ function addNote() {
         the object will be read to define the note's color */
 
         btn_color1.addEventListener('click', () => {
-            notes.bckgColor = colorList.b;
-            console.log('changed in obj');
-            note_itself_active.setAttribute("style", "background-color:" + notes.bckgColor + ';');
+            notesFile.bckgColor = colorList.b;
         });
         btn_color2.addEventListener('click', () => {
             notes.bckgColor = colorList.c;
-            console.log('changed');
-            note_itself_active.setAttribute("style", "background-color:" + notes.bckgColor + ';')
         });
         btn_color3.addEventListener('click', () => {
             notes.bckgColor = colorList.d;
-            console.log('changed');
-            note_itself_active.setAttribute("style", "background-color:" + notes.bckgColor + ';')
         });
 
         // The bckg color should be defined by the object's property
 
-        btn.addEventListener('click', () => {
-            if (makeEditable.getAttribute("contenteditable") == "false") {
-                makeEditable.setAttribute("contenteditable", true);
-                btn.innerHTML = 'Save';
-                note_itself_active.classList.toggle('active');
-                btn_color1.classList.toggle('visible');
-                btn_color2.classList.toggle('visible');
-                btn_color3.classList.toggle('visible');
-            }
-            else {
-                makeEditable.setAttribute("contenteditable", false);
-                btn.innerHTML = 'Edit Note';
-                note_itself_active.classList.toggle('active');
-                btn_color1.classList.toggle('visible');
-                btn_color2.classList.toggle('visible');
-                btn_color3.classList.toggle('visible');
-                notes.note = h4_inNote.innerHTML;
-            }
-        })
+        // btn.addEventListener('click', () => {
+        //     if (makeEditable.getAttribute("contenteditable") == "false") {
+        //         makeEditable.setAttribute("contenteditable", true);
+        //         btn.innerHTML = 'Save';
+        //         note_itself_active.classList.toggle('active');
+        //         btn_color1.classList.toggle('visible');
+        //         btn_color2.classList.toggle('visible');
+        //         btn_color3.classList.toggle('visible');
+        //     }
+        //     else {
+        //         makeEditable.setAttribute("contenteditable", false);
+        //         btn.innerHTML = 'Edit Note';
+        //         note_itself_active.classList.toggle('active');
+        //         btn_color1.classList.toggle('visible');
+        //         btn_color2.classList.toggle('visible');
+        //         btn_color3.classList.toggle('visible');
+        //         notes.note = h4_inNote.innerHTML;
+        //     }
+        // })
     });
 
-    saveToLocalStorage();
+    // saveToLocalStorage();
 }
