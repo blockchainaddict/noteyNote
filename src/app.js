@@ -3,6 +3,9 @@ const app = express();
 const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');//import session to create user session
+const cookieParser = require('cookie-parser');
+const rememberMiddleware = require('./middlewares/cookieAuthMiddleware')
+
 const port = process.env.PORT || 3000; //Set up port for heroku
 
 
@@ -19,6 +22,8 @@ app.use(methodOverride('_method'));
 
 //middleware for session data
 app.use(session({secret: "mensajesecreto"}));
+app.use(cookieParser());
+app.use(rememberMiddleware);
 
 // We set Ejs variavles and refer to /views folder for the module to find it
 app.set("view engine", "ejs");

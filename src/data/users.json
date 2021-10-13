@@ -1,0 +1,18 @@
+[
+ {
+  "username": "user1",
+  "password": "123"
+ },
+ {
+  "username": "santa",
+  "password": "$2a$10$0zcsNGs1B4jwap3.jbv2lOShQenvBojAk8dRLjGRRb0bUeKFu3syS"
+ },
+ {
+  "username": "aaa",
+  "password": "$2a$10$LLdUCLum7zAhUXUCXIBVAO5PMFfwTGH2A2VW3w5DiQMd3opAYC9Qu"
+ },
+ {
+  "username": "bbb",
+  "password": "$2a$10$yf2LwGaw6x8m5ugQe92EVe2G87buqv2oEhzEMKGM/CFqRJ6wfz992"
+ }
+]
