@@ -57,7 +57,6 @@ const mainController = {
 
         if(errors.isEmpty()){
             for(let i=0;i<users.length; i++){
-                console.log('Vuelta 1 en file usuarios');
                 if(users[i].username == req.body.username){
                     console.log("Username coincides");
                     if(bcrypt.compareSync(req.body.password, users[i].password)){

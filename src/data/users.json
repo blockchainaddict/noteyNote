@@ -14,5 +14,13 @@
  {
   "username": "bbb",
   "password": "$2a$10$yf2LwGaw6x8m5ugQe92EVe2G87buqv2oEhzEMKGM/CFqRJ6wfz992"
+ },
+ {
+  "username": "Camila",
+  "password": "$2a$10$dMx0.DBeiU05Jf4PVwN42uXgkbzU.4GDQf8/tu5VU5u8NFHOZsY2S"
+ },
+ {
+  "username": "paprika",
+  "password": "$2a$10$ykQLXZAfVXs5OmW21kLWR./xdgNFuxh3iNayrkvoJ/IEgiWUeeLH6"
  }
 ]
