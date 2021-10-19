@@ -2,7 +2,6 @@
 const path = require('path');
 const fs = require('fs');
 const { validationResult } = require('express-validator');
-const bcrypt = require('bcryptjs');
 
 const notesLocation = path.join(__dirname, '../data/dataBase.json');
 const notesFile = JSON.parse(fs.readFileSync(notesLocation, 'utf-8'));
@@ -18,7 +17,8 @@ const mainController = {
         const newNote = {
             noteNumber: notesFile.length + 1,
             content: req.body.textarea1,
-            bckgColor: req.body.noteColor ? req.body.noteColor : "rgb(179, 194, 147)"
+            bckgColor: req.body.noteColor ? req.body.noteColor : "rgb(179, 194, 147)",
+            owner: req.session.userToLog ? req.session.userToLog.id : 0
         }
 
         const errors = validationResult(req);
@@ -31,65 +31,6 @@ const mainController = {
             res.render('indexNotey', {notesFile:notesFile, errors:errors.mapped() /*, old:req.body*/});
         }
         
-    },
-
-    create: (req,res)=>{
-        res.render('createUser');
-    },
-    createUser: (req,res)=>{
-        newUser = {
-            username: req.body.username,
-            password: bcrypt.hashSync(req.body.password, 10)
-        }
-
-        users.push(newUser);
-        console.log("new user created: ", newUser);
-        fs.writeFileSync(usersLocation, JSON.stringify(users, null, " "));
-        res.redirect('/');
-    },
-
-    login: (req,res)=>{
-        res.render('login');
-    },
-    processLogin: (req,res)=>{
-        let errors = validationResult(req);
-        let userToLog = undefined;
-
-        if(errors.isEmpty()){
-            for(let i=0;i<users.length; i++){
-                if(users[i].username == req.body.username){
-                    console.log("Username coincides");
-                    if(bcrypt.compareSync(req.body.password, users[i].password)){
-                        console.log('password checked', req.body.password, users[i].password);
-                        userToLog = users[i];
-                        break;
-                    }
-                }
-            }
-
-            console.log('User and pass coincide');
-
-            if(userToLog == undefined){
-                res.render('login', {errors: [
-                    {msg: 'Check credentials'}
-                ]})
-            }
-
-            req.session.userToLog = userToLog;
-
-            if(req.body.remember != undefined){
-                res.cookie('remember account', userToLog.username, {maxAge: 60000});
-                console.log('remember account');
-            }
-            else{
-                console.log('not checked');
-            }
-            res.redirect('/');
-        }
-        
-        else{
-            res.render('login', {errors: errors.mapped()});
-        }
     },
 
     edit: (req,res)=>{

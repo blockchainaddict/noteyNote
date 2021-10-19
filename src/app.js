@@ -4,7 +4,8 @@ const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');//import session to create user session
 const cookieParser = require('cookie-parser');
-const rememberMiddleware = require('./middlewares/cookieAuthMiddleware')
+const rememberMiddleware = require('./middlewares/cookieAuthMiddleware');
+
 
 const port = process.env.PORT || 3000; //Set up port for heroku
 

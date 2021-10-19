@@ -2,7 +2,13 @@
 <header class="header">
     <img src="/img/notepad.gif" alt="img1">
     <h1>MyNote</h1>
-    <a href="/login">Log in</a>
+    
+    <% if(!locals.session){%>
+        <a href="/login">Log in</a>
+        <a href="/createUser">Create user</a>
+    <%} %>
+    
+
     <h4>Taking notes is useful and relaxing. <br> Save paper by using this app!</h4>
 </header>
 

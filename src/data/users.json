@@ -1,26 +1,12 @@
 [
  {
-  "username": "user1",
-  "password": "123"
+  "id": 0,
+  "username": "sudo",
+  "password": "$2a$10$x6zLqgK/sAXIUO1H11f/OuF8o3fm4Qe0pBgOw2xIyjMCrOJ2279CG"
  },
  {
-  "username": "santa",
-  "password": "$2a$10$0zcsNGs1B4jwap3.jbv2lOShQenvBojAk8dRLjGRRb0bUeKFu3syS"
- },
- {
-  "username": "aaa",
-  "password": "$2a$10$LLdUCLum7zAhUXUCXIBVAO5PMFfwTGH2A2VW3w5DiQMd3opAYC9Qu"
- },
- {
-  "username": "bbb",
-  "password": "$2a$10$yf2LwGaw6x8m5ugQe92EVe2G87buqv2oEhzEMKGM/CFqRJ6wfz992"
- },
- {
-  "username": "Camila",
-  "password": "$2a$10$dMx0.DBeiU05Jf4PVwN42uXgkbzU.4GDQf8/tu5VU5u8NFHOZsY2S"
- },
- {
-  "username": "paprika",
-  "password": "$2a$10$ykQLXZAfVXs5OmW21kLWR./xdgNFuxh3iNayrkvoJ/IEgiWUeeLH6"
+  "id": 1,
+  "username": "test333",
+  "password": "$2a$10$Tq3aY9iOGhKK45lESXbD/u.9ghjkG8H/K8rkEMxO7bnLlOIwnAdC2"
  }
 ]

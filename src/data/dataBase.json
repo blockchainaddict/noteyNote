@@ -2,11 +2,19 @@
  {
   "noteNumber": 1,
   "content": "The first note.",
-  "bckgColor": "rgb(147, 160, 194)"
+  "bckgColor": "rgb(147, 160, 194)",
+  "owner": 0
  },
  {
   "noteNumber": 2,
   "content": "Creating notes.",
-  "bckgColor": "rgb(194, 147, 161)"
+  "bckgColor": "rgb(194, 147, 161)",
+  "owner": 0
+ },
+ {
+  "noteNumber": 3,
+  "content": "note as user",
+  "bckgColor": "rgb(179, 194, 147)",
+  "owner": 1
  }
 ]
