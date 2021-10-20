@@ -33,7 +33,7 @@
                     </div>
                 <% } %>
 
-                <% if(userLogged && notesFile[i].owner == userLogged.id){%> 
+                <% if(locals.userLogged && notesFile[i].owner == userLogged.id){%> 
                     <div class="columns"> <div class="note_button_wrapper">
                         <h3 contenteditable="true"> Note <%=notesFile[i].noteNumber %></h3>
                         <button id = "btnb<%= notesFile[i].noteNumber %>"> <a href="/edit/<%=notesFile[i].noteNumber%>" >Edit Note</a> </button>
@@ -50,8 +50,6 @@
                     
                     </div>
                 <% } %>
-
-                <!-- userLogged.userToLog && notesFile[i].owner == userLogged.userToLog.id -->
             <% } %> 
 
         </div>

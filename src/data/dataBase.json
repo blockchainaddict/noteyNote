@@ -40,5 +40,11 @@
   "content": "asdasda",
   "bckgColor": "rgb(179, 194, 147)",
   "owner": 2
+ },
+ {
+  "noteNumber": 8,
+  "content": "private note",
+  "bckgColor": "rgb(194, 147, 161)",
+  "owner": 2
  }
 ]

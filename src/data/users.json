@@ -13,5 +13,15 @@
   "id": 2,
   "username": "1",
   "password": "$2a$10$s2vSnMlFX0Pd7iULOTTgku./2SaaBOVTLdMDZfJO7UC3PemVVP3iC"
+ },
+ {
+  "id": 3,
+  "username": "monstruo",
+  "password": "$2a$10$ClTyzxro.Jtou8kP6bcOf.zdumNK4f6ImC75LKVFZgkJxKKjtT/ga"
+ },
+ {
+  "id": 4,
+  "username": "monstruo2",
+  "password": "$2a$10$/6MNJmhxoYQX8NHl4bRNHeZiPGsMGsO/I33cK8AUjgnYx5M91G.g2"
  }
 ]

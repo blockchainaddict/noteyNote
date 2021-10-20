@@ -28,7 +28,10 @@ const validateLogin = [
 ];
 
 const validateNewUser = [
-    check('username').notEmpty().withMessage("Can't be empty")
+    check('username').notEmpty().withMessage("Can't be empty"),
+    check('password')
+        .notEmpty().withMessage("Choose a password").bail()
+        .isLength({min:6}).withMessage("Must be at least 6 characters")
 ];
 
 router.get('/', mainController.index);
@@ -38,7 +41,7 @@ router.post('/login', validateLogin, usersController.processLogin);
 router.get('/logout', usersController.logOut);
 
 router.get('/create', guestMiddleware, usersController.create);
-router.post('/create', validateLogin, usersController.createUser);
+router.post('/create', validateNewUser, usersController.createUser);
 
 router.post('/', validateRegister, mainController.newNote);
 
