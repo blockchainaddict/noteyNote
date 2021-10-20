@@ -279,6 +279,12 @@ body {
     padding: 3px;
 }
 
+/* USER MENU */
+.user_menu{
+    display: flex;
+    flex-direction: column;
+}
+
 .footer{
     display: flex;
     margin: 0;

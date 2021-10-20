@@ -11,7 +11,8 @@ const users = JSON.parse(fs.readFileSync(usersLocation, 'utf-8'));
 
 const mainController = {
     index: (req,res)=>{
-        res.render('indexNotey', {notesFile:notesFile});
+        console.log(req.session.userToLog);
+        res.render('indexNotey', {notesFile:notesFile, userLogged:req.session.userToLog});
     },
     newNote: (req,res)=>{
         const newNote = {

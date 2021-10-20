@@ -35,6 +35,7 @@ router.get('/', mainController.index);
 
 router.get('/login', usersController.login);
 router.post('/login', validateLogin, usersController.processLogin);
+router.get('/logout', usersController.logOut);
 
 router.get('/create', guestMiddleware, usersController.create);
 router.post('/create', validateLogin, usersController.createUser);
@@ -46,14 +47,7 @@ router.put('/edit/:id', mainController.editSave);
 
 router.get('/delete/:id', mainController.delete);
 
-router.get('/user', (req,res)=>{
-    if(req.session.userToLog==undefined){
-        res.redirect('/login');
-    }
-    else{
-        res.send('User logged is: ' + req.session.userToLog.username);
-    }
-})
+router.get('/user', authMiddleware, usersController.userPage);
 
 // router.get('/db', (req,res)=>{
 //     connection.connect();

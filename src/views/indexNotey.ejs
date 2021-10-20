@@ -7,26 +7,52 @@
 <body>
     
     <%- include("partials/header_main") %> 
+    <%- include("partials/main") %> 
 
 
     <div class="saved_notes_wrapper">
         <div id="saved_notes">
-            <%for(let i=0; i<notesFile.length; i++){ %>
-            <div class="columns"> <div class="note_button_wrapper">
-                <h3 contenteditable="true"> Note <%=notesFile[i].noteNumber %></h3>
-                <button id = "btnb<%= notesFile[i].noteNumber %>"> <a href="/edit/<%=notesFile[i].noteNumber%>" >Edit Note</a> </button>
-                
-            </div>
-
-            <div style= "background-color:<%= notesFile[i].bckgColor %>" class="note_itself" id="note<%= notesFile[0].noteNumber %>" contenteditable="false">
-                <h4> <%= notesFile[i].content %></h4>
-                
-            </div>
-
-            <a class="delete_button" href="/delete/<%=notesFile[i].noteNumber%>?"><i class="far fa-trash-alt"></i></a>
             
-        </div>
-        <% } %>
+            <%for(let i=0; i<notesFile.length; i++){ %>
+
+                <% if(notesFile[i].owner == 0){%> 
+                    <div class="columns"> <div class="note_button_wrapper">
+                        <h3 contenteditable="true"> Note <%=notesFile[i].noteNumber %></h3>
+                        <button id = "btnb<%= notesFile[i].noteNumber %>"> <a href="/edit/<%=notesFile[i].noteNumber%>" >Edit Note</a> </button>
+                        
+                        </div>
+
+                        <div style= "background-color:<%= notesFile[i].bckgColor %>" class="note_itself" id="note<%= notesFile[0].noteNumber %>" contenteditable="false">
+                            
+                            <h4> <%= notesFile[i].content %></h4>
+                            
+                        </div>
+
+                        <a class="delete_button" href="/delete/<%=notesFile[i].noteNumber%>?"><i class="far fa-trash-alt"></i></a>
+                    
+                    </div>
+                <% } %>
+
+                <% if(userLogged && notesFile[i].owner == userLogged.id){%> 
+                    <div class="columns"> <div class="note_button_wrapper">
+                        <h3 contenteditable="true"> Note <%=notesFile[i].noteNumber %></h3>
+                        <button id = "btnb<%= notesFile[i].noteNumber %>"> <a href="/edit/<%=notesFile[i].noteNumber%>" >Edit Note</a> </button>
+                        
+                        </div>
+
+                        <div style= "background-color:<%= notesFile[i].bckgColor %>" class="note_itself" id="note<%= notesFile[0].noteNumber %>" contenteditable="false">
+                            
+                            <h4> <%= notesFile[i].content %></h4>
+                            
+                        </div>
+
+                        <a class="delete_button" href="/delete/<%=notesFile[i].noteNumber%>?"><i class="far fa-trash-alt"></i></a>
+                    
+                    </div>
+                <% } %>
+
+                <!-- userLogged.userToLog && notesFile[i].owner == userLogged.userToLog.id -->
+            <% } %> 
 
         </div>
         

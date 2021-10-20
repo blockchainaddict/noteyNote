@@ -22,7 +22,12 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 
 //middleware for session data
-app.use(session({secret: "mensajesecreto"}));
+app.use(session({
+    secret: "mensajesecreto",
+    resave: false,
+    saveUninitialized: false
+                        
+}));
 app.use(cookieParser());
 app.use(rememberMiddleware);
 

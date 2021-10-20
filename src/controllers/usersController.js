@@ -3,9 +3,13 @@ const fs = require('fs');
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const User = require('../models/users.js');
+const Notes = require('../models/notes.js');
 
 const usersLocation = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersLocation, 'utf-8'));
+
+const notesLocation = path.join(__dirname, '../data/dataBase.json');
+const notesFile = JSON.parse(fs.readFileSync(notesLocation, 'utf-8'));
 
 const usersController = {
     create: (req,res)=>{
@@ -71,6 +75,14 @@ const usersController = {
         else{
             res.render('login', {errors: errors.mapped()});
         }
+    },
+    logOut: (req,res)=>{
+        delete req.session.userToLog;
+        res.redirect('/');
+    },
+    userPage: (req,res)=>{
+        noteCount = Notes.notesByUser(req.session.userToLog.id)
+        res.render('userPage', {userLogged:req.session.userToLog, notesFile:notesFile, noteCount:noteCount});
     }
 }
 

@@ -7,13 +7,9 @@
 
     <form action="/login" method="POST">
         <% if(locals.errors){%>
-            <ul>
-                <% for(let i=0; i<errors.length; i++){%>
-                    <li>
-                        <%=errors[i].msg%>
-                    </li>
-                <%}%>
-            </ul>
+            <p style="color:red">
+                <%=errors.username.msg%>
+            </p>
         <% } %>
 
         <label for="username">Username</label>
